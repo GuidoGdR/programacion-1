@@ -119,9 +119,9 @@ def b(smaller_date:tuple[int, int, int], bigger_date:tuple[int, int, int])->int:
 def b_main():
     
     print("\tIngresar primera fecha")
-    day_1 = input_type("dia: ", int)
-    month_1 = input_type("mes: ", int)
-    year_1 = input_type("año: ", int)
+    day_1:int = input_type("dia: ", int)
+    month_1:int = input_type("mes: ", int)
+    year_1:int = input_type("año: ", int)
     
     print()
     print("\tIngresar segunda fecha")
