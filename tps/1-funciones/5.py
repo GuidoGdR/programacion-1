@@ -14,4 +14,4 @@ No se permite utilizar ayudas externas a las mismas.
 """
 
 
-a = lambda number: number+1
+ejemplo_lambda = lambda number: number+1
