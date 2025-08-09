@@ -14,4 +14,11 @@ No se permite utilizar ayudas externas a las mismas.
 """
 
 
-ejemplo_lambda = lambda number: number+1
+oblongo = lambda vNum: any(vNum == vAux * (vAux + 1) for vAux in range(1, vNum))
+triangular = lambda vNum: any(vNum == (vAux*(vAux+1))//2  for vAux in range(1, vNum+1) ) # k=(k*(k+1))/2 (Definicion algebraica de numero triangular)
+
+#Ejemplos
+
+print(oblongo(6))  # True
+print(triangular(15))  # True → 1+2+3+4+5
+print(triangular(8))   # False
