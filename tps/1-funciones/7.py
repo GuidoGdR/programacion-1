@@ -6,6 +6,8 @@ al dado. Utilizando esta función sin modificaciones ni agregados, desarrollar p
 a)Sumar N días a una fecha
 b)Calcular la cantidad de días existentes entre dos fechas cualesquiera.
 """
+from tools.input_type import input_type
+
 def is_leap_year(year:int)->bool:
     
     if year % 2 == 0:
@@ -70,7 +72,6 @@ def next_day(day:int, month:int, year:int)->tuple[int, int, int]:
     
     return (1, 1, year+1)
 
-# a sin terminar
 def a(n_days:int, date:tuple[int, int, int])->tuple[int, int, int]:
 
     new_date = next_day(*date)
@@ -80,6 +81,23 @@ def a(n_days:int, date:tuple[int, int, int])->tuple[int, int, int]:
 
     return new_date
 
+def a_main():
+    print("\tIngresar una fecha")
+    day = input_type("dia: ", int)
+    month = input_type("mes: ", int)
+    year = input_type("año: ", int)
+    
+    print()
+    print("\tSe le sumaran")
+    days_to_add = input_type("dias: ", int)
+    
+    result = a(days_to_add, (day, month, year))
+
+    print()
+    print("fecha resultante:")
+    print(f"dia: {result[0]} \nmes: {result[1]} \naño: {result[2]}")
+
+    input("Enter para finalizar")
 # b sin terminar
 def b(smaller_date:tuple[int, int, int], bigger_date:tuple[int, int, int])->int:
 
@@ -98,5 +116,28 @@ def b(smaller_date:tuple[int, int, int], bigger_date:tuple[int, int, int])->int:
 
     return days_apart
     
+def b_main():
+    
+    print("\tIngresar primera fecha")
+    day_1 = input_type("dia: ", int)
+    month_1 = input_type("mes: ", int)
+    year_1 = input_type("año: ", int)
+    
+    print()
+    print("\tIngresar segunda fecha")
+    day_2:int = input_type("dia: ", int)
+    month_2:int = input_type("mes: ", int)
+    year_2:int = input_type("año: ", int)
+    
+    result = b((day_1, month_1, year_1), (day_2, month_2, year_2))
 
-print(next_day(day=30, month=3, year=1700))
+    print()
+    print("Las fechas tienen una diferencia de:")
+    print(f"{result} dias.")
+
+    input("Enter para finalizar")
+
+#print(next_day(day=30, month=3, year=1700))
+#a_main()
+#b_main()
+
